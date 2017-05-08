@@ -16,20 +16,6 @@ namespace Evolution
 
         }
 
-        public bool IsBlue
-        {
-            get
-            {
-                foreach (bool al in GetGene<bool>("isBlue").Alleles)
-                {
-                    if (al)
-                    {
-                        return true;
-                    }
-
-                }
-                return false;
-            }
-        }
+        public bool IsBlue { get { return GeneActive("isBlue", true); } }
     }
 }

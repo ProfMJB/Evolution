@@ -39,6 +39,18 @@ namespace Evolution
             }
             return child;
         }
+        protected bool GeneActive(string key, bool dominant)
+        {
+            foreach (bool al in GetGene<bool>(key).Alleles)
+            {
+                if (al)
+                {
+                    return dominant;
+                }
+
+            }
+            return !dominant;
+        }
 
         public override string ToString()
         {
